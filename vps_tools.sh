@@ -53,7 +53,7 @@ fi
 
 # a trick to redisplay menu option
 show_menu() {
-  echo "1) Installation acceleration"
+  echo "1) Installation_acceleration"
   echo "2) 设置Swap"
   echo "3) 卸载阿里云盾"
   echo "4) 性能测试(LemonBench)"
