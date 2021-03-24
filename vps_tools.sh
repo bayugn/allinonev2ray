@@ -61,7 +61,7 @@ show_menu() {
 }
 
 continue_prompt() {
-  read -p "继续其他操作 (yes/no)? " choice
+  read -p "Continue other operations (yes/no)? " choice
   case "${choice}" in
     y|Y|[yY][eE][sS] ) show_menu ;;
     * ) exit 0;;
@@ -70,7 +70,7 @@ continue_prompt() {
 
 netSpeed() {
   ${sudoCmd} ${systemPackage} install curl -y -qq
-  wget -q -N https://raw.githubusercontent.com/ylx2016/Linux-NetSpeed/master/tcp.sh -O /tmp/tcp.sh && chmod +x /tmp/tcp.sh && ${sudoCmd} /tmp/tcp.sh
+  wget -q -N https://raw.githubusercontent.com/GH-juns28/allinonev2ray/main/tools/tcp.sh -O /tmp/tcp.sh && chmod +x /tmp/tcp.sh && ${sudoCmd} /tmp/tcp.sh
 }
 
 setSwap() {
