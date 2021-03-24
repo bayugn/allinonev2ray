@@ -53,15 +53,15 @@ fi
 
 # a trick to redisplay menu option
 show_menu() {
-  echo "1) Installation acceleration"
-  echo "2) Set up swap"
-  echo "3) Uninstall Alibaba Cloud Shield"
-  echo "4) Performance Test (LemonBench)"
-  echo "5) Performance Test (Oldking)"
+  echo "1) 安装加速"
+  echo "2) 设置Swap"
+  echo "3) 卸载阿里云盾"
+  echo "4) 性能测试(LemonBench)"
+  echo "5) 性能测试(Oldking)"
 }
 
 continue_prompt() {
-  read -p "Continue other operations (yes/no)? " choice
+  read -p "继续其他操作 (yes/no)? " choice
   case "${choice}" in
     y|Y|[yY][eE][sS] ) show_menu ;;
     * ) exit 0;;
@@ -100,17 +100,17 @@ menu() {
   colorEcho ${YELLOW} "VPS Toolkit by phlinhng"
   echo ""
 
-  PS3="Select operation [Enter any value or press Ctrl+C to exit]: "
+  PS3="选择操作[输入任意值或按Ctrl+C退出]: "
   COLUMNS=39
-  options=("Installation Acceleration" "Setup Swap" "Uninstall Alibaba Cloud Shield" "Performance Test (LemonBench)" "Performance Test (Oldking)")
+  options=("安装加速" "设置Swap" "卸载阿里云盾" "性能测试(LemonBench)" "性能测试(Oldking)")
   select opt in "${options[@]}"
   do
     case "${opt}" in
-      "Installation acceleration") netSpeed && continue_prompt ;;
-      "Set up swap") setSwap && continue_prompt ;;
-      "Uninstall Alibaba Cloud Shield") rmAliyundun && continue_prompt ;;
-      "Performance Testing(LemonBench)") LemonBench && exit 0 ;;
-      "Performance Testing(Oldking)") Oldking && exit 0 ;;
+      "安装加速") netSpeed && continue_prompt ;;
+      "设置Swap") setSwap && continue_prompt ;;
+      "卸载阿里云盾") rmAliyundun && continue_prompt ;;
+      "性能测试(LemonBench)") LemonBench && exit 0 ;;
+      "性能测试(Oldking)") Oldking && exit 0 ;;
       *) break;;
     esac
   done
