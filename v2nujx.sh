@@ -849,7 +849,7 @@ vps_tools() {
   exit 0
 }
 
-rm_v2gun() {
+rm_v2nujx() {
   if [ -f "/usr/local/bin/v2ray" ]; then
     wget -q https://raw.githubusercontent.com/GH-juns28/allinonev2ray/main/rm_v2nujx.sh -O /tmp/rm_v2nujx.sh && bash /tmp/rm_v2nujx.sh
     exit 0
@@ -895,7 +895,7 @@ menu() {
       "6") get_trojan && continue_prompt ;;
       "7") get_naiveproxy && continue_prompt ;;
       "8") vps_tools ;;
-      "9") rm_v2gun ;;
+      "9") rm_v2nujx ;;
       *) break ;;
     esac
   done
