@@ -106,7 +106,7 @@ menu() {
   select opt in "${options[@]}"
   do
     case "${opt}" in
-      "安装加速") netSpeed && continue_prompt ;;
+      "Installation_acceleration") netSpeed && continue_prompt ;;
       "设置Swap") setSwap && continue_prompt ;;
       "卸载阿里云盾") rmAliyundun && continue_prompt ;;
       "性能测试(LemonBench)") LemonBench && exit 0 ;;
