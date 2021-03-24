@@ -861,7 +861,7 @@ show_menu() {
   echo "----------Install agent----------"
   echo "1) installation VLESS + VMess + Trojan + NaiveProxy"
   echo "2) Repair certificate / change domain name"
-  echo "3) Custom Cloudflare node"
+  echo "3) Custom BUGHOST/SNI "
   echo "----------Display configuration----------"
   echo "4) Show link"
   echo "----------Component management----------"
