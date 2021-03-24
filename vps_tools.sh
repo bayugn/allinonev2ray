@@ -54,10 +54,10 @@ fi
 # a trick to redisplay menu option
 show_menu() {
   echo "1) Installation_acceleration"
-  echo "2) 设置Swap"
-  echo "3) 卸载阿里云盾"
-  echo "4) 性能测试(LemonBench)"
-  echo "5) 性能测试(Oldking)"
+  echo "2) Setup_Swap"
+  echo "3) Uninstall_Alibaba_Cloud_Shield"
+  echo "4) Performance_Testing(LemonBench)"
+  echo "5) Performance_Testing(Oldking)"
 }
 
 continue_prompt() {
@@ -100,17 +100,17 @@ menu() {
   colorEcho ${YELLOW} "VPS Toolkit by phlinhng"
   echo ""
 
-  PS3="选择操作[输入任意值或按Ctrl+C退出]: "
+  PS3="Select operation [Enter any value or press Ctrl+C to exit]: "
   COLUMNS=39
-  options=("Installation_acceleration" "设置Swap" "卸载阿里云盾" "性能测试(LemonBench)" "性能测试(Oldking)")
+  options=("Installation_acceleration" "Setup_Swap" "Uninstall_Alibaba_Cloud_Shield" "Performance_Testing(LemonBench)" "Performance_Testing(Oldking)")
   select opt in "${options[@]}"
   do
     case "${opt}" in
       "Installation_acceleration") netSpeed && continue_prompt ;;
-      "设置Swap") setSwap && continue_prompt ;;
-      "卸载阿里云盾") rmAliyundun && continue_prompt ;;
-      "性能测试(LemonBench)") LemonBench && exit 0 ;;
-      "性能测试(Oldking)") Oldking && exit 0 ;;
+      "Setup_Swap") setSwap && continue_prompt ;;
+      "Uninstall_Alibaba_Cloud_Shield") rmAliyundun && continue_prompt ;;
+      "Performance_Testing(LemonBench)") LemonBench && exit 0 ;;
+      "Performance_Testing(Oldking)") Oldking && exit 0 ;;
       *) break;;
     esac
   done
