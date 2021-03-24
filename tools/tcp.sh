@@ -23,7 +23,7 @@ Info="${Green_font_prefix}[信息]${Font_color_suffix}"
 Error="${Red_font_prefix}[错误]${Font_color_suffix}"
 Tip="${Green_font_prefix}[注意]${Font_color_suffix}"
 
-#安装BBR内核
+#InstallBBRKernel
 installbbr(){
 	kernel_version="5.9.6"
 	bit=`uname -m`
@@ -97,7 +97,7 @@ installbbr(){
 	#echo -e "${Tip} After the kernel is installed, please refer to the above information to check whether the installation is successful and manually adjust the kernel boot sequence"
 }
 
-#安装BBRplus内核 4.14.129
+#InstallBBRplusKernel 4.14.129
 installbbrplus(){
 	kernel_version="4.14.160-bbrplus"
 	bit=`uname -m`
@@ -134,7 +134,7 @@ installbbrplus(){
 	echo -e "${Tip} ${Red_font_prefix}Please check if there is kernel information above，Never restart without a kernel${Font_color_suffix}"
 	echo -e "${Tip} ${Red_font_prefix}rescueNot a normal kernel, to exclude this${Font_color_suffix}"
 	echo -e "${Tip} After restarting the VPS, please re-run the script to start${Red_font_prefix}BBRplus${Font_color_suffix}"
-	stty erase '^H' && read -p "需要重启VPS后，才能开启BBRplus，是否现在重启 ? [Y/n] :" yn
+	stty erase '^H' && read -p "需要重启VPS后，才能Turn onBBRplus，是否现在重启 ? [Y/n] :" yn
 	[ -z "${yn}" ] && yn="y"
 	if [[ $yn == [Yy] ]]; then
 		echo -e "${Info} VPS 重启中..."
@@ -256,7 +256,7 @@ installlot(){
 	echo -e "${Tip} ${Red_font_prefix}Please check if there is kernel information above，Never restart without a kernel${Font_color_suffix}"
 	echo -e "${Tip} ${Red_font_prefix}rescueNot a normal kernel, to exclude this${Font_color_suffix}"
 	echo -e "${Tip} After restarting the VPS, please re-run the script to start${Red_font_prefix}Lotserver${Font_color_suffix}"
-	stty erase '^H' && read -p "需要重启VPS后，才能开启Lotserver，是否现在重启 ? [Y/n] :" yn
+	stty erase '^H' && read -p "需要重启VPS后，才能Turn onLotserver，是否现在重启 ? [Y/n] :" yn
 	[ -z "${yn}" ] && yn="y"
 	if [[ $yn == [Yy] ]]; then
 		echo -e "${Info} VPS 重启中..."
@@ -266,7 +266,7 @@ installlot(){
 }
 
 
-#安装xanmod内核  from xanmod.org
+#InstallxanmodKernel  from xanmod.org
 installxanmod(){
 	kernel_version="5.5.1-xanmod1"
 	bit=`uname -m`
@@ -365,7 +365,7 @@ installbbrplusnew(){
 	echo -e "${Tip} ${Red_font_prefix}Please check if there is kernel information above，Never restart without a kernel${Font_color_suffix}"
 	echo -e "${Tip} ${Red_font_prefix}rescueNot a normal kernel, to exclude this${Font_color_suffix}"
 	echo -e "${Tip} After restarting the VPS, please re-run the script to start${Red_font_prefix}BBRplus${Font_color_suffix}"
-	stty erase '^H' && read -p "需要重启VPS后，才能开启BBRplus，是否现在重启 ? [Y/n] :" yn
+	stty erase '^H' && read -p "需要重启VPS后，才能Turn onBBRplus，是否现在重启 ? [Y/n] :" yn
 	[ -z "${yn}" ] && yn="y"
 	if [[ $yn == [Yy] ]]; then
 		echo -e "${Info} VPS 重启中..."
@@ -375,7 +375,7 @@ installbbrplusnew(){
 
 }
 
-#安装cloud内核
+#InstallcloudKernel
 installcloud(){
 	bit=`uname -m`
 	rm -rf kernel_cloud
@@ -505,14 +505,14 @@ startbbr2cake(){
 	echo -e "${Info}BBR2修改成功，重启生效！"
 }
 
-#开启ecn
+#Turn onecn
 startecn(){
 	sed -i '/net.ipv4.tcp_ecn/d' /etc/sysctl.d/99-sysctl.conf
 	sed -i '/net.ipv4.tcp_ecn/d' /etc/sysctl.conf
 	
 	echo "net.ipv4.tcp_ecn=1" >> /etc/sysctl.d/99-sysctl.conf
 	sysctl --system
-	echo -e "${Info}开启ecn结束！"
+	echo -e "${Info}Turn onecn结束！"
 }
 
 #shutdownecn
@@ -541,7 +541,7 @@ remove_bbr_lotserver(){
 		echo | bash <(wget -qO- https://git.io/lotServerInstall.sh) uninstall
 	fi
 	clear
-	# echo -e "${Info}:清除bbr/lotserver加速完成。"
+	# echo -e "${Info}:清除bbr/lotserveraccelerate完成。"
 	# sleep 1s
 }
 
@@ -1074,25 +1074,25 @@ Update_Shell(){
 	fi
 }
 
-#切换到不卸载内核版本
+#Switch to not uninstall the kernel version
 gototcpx(){
 	clear
 	wget -N "https://github.000060000.xyz/tcpx.sh" && chmod +x tcpx.sh && ./tcpx.sh
 }
 
-#切换到秋水逸冰BBR安装脚本
+#切换到秋水逸冰BBRInstall脚本
 gototeddysun_bbr(){
 	clear
 	wget https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 }
 
-#切换到一键DD安装系统脚本 新手勿入 
+#切换到一键DDInstall系统脚本 新手勿入 
 gotodd(){
 	clear
 	wget -qO ~/Network-Reinstall-System-Modify.sh 'https://github.com/ylx2016/reinstall/raw/master/Network-Reinstall-System-Modify.sh' && chmod a+x ~/Network-Reinstall-System-Modify.sh && bash ~/Network-Reinstall-System-Modify.sh -UI_Options
 }
 
-#禁用IPv6
+#DisableIPv6
 closeipv6(){
 	clear
 	sed -i '/net.ipv6.conf.all.disable_ipv6/d' /etc/sysctl.d/99-sysctl.conf
@@ -1109,7 +1109,7 @@ net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.d/99-sysctl.conf
 	echo -e "${Info}Disabling IPv6 is over, and may need to restart!"
 }
 
-#开启IPv6
+#Turn onIPv6
 openipv6(){
 	clear
 	sed -i '/net.ipv6.conf.all.disable_ipv6/d' /etc/sysctl.d/99-sysctl.conf
@@ -1123,27 +1123,27 @@ openipv6(){
 net.ipv6.conf.default.disable_ipv6 = 0
 net.ipv6.conf.lo.disable_ipv6 = 0" >> /etc/sysctl.d/99-sysctl.conf
 	sysctl --system
-	echo -e "${Info}开启IPv6结束，可能需要重启！"
+	echo -e "${Info}Turn onIPv6结束，可能需要重启！"
 }
 
 #开始菜单
 start_menu(){
 clear
-echo && echo -e " TCP加速 一键安装管理脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix} from blog.ylx.me 母鸡慎用
- ${Green_font_prefix}0.${Font_color_suffix} 升级脚本
- ${Green_font_prefix}9.${Font_color_suffix} 切换到不卸载内核版本	${Green_font_prefix}10.${Font_color_suffix} 切换到一键DD系统脚本
- ${Green_font_prefix}1.${Font_color_suffix} 安装 BBR原版内核		${Green_font_prefix}4.${Font_color_suffix} 安装 cloud内核 KVM
- ${Green_font_prefix}2.${Font_color_suffix} 安装 BBRplus版内核		${Green_font_prefix}5.${Font_color_suffix} 安装 BBRplus新版内核
- ${Green_font_prefix}3.${Font_color_suffix} 安装 Lotserver(锐速)内核	${Green_font_prefix}6.${Font_color_suffix} 安装 xanmod版内核
- ${Green_font_prefix}11.${Font_color_suffix} 使用BBR+FQ加速		${Green_font_prefix}12.${Font_color_suffix} 使用BBR+FQ_PIE加速 
- ${Green_font_prefix}13.${Font_color_suffix} 使用BBR+CAKE加速
- ${Green_font_prefix}14.${Font_color_suffix} 使用BBR2+FQ加速	 	${Green_font_prefix}15.${Font_color_suffix} 使用BBR2+FQ_PIE加速 
- ${Green_font_prefix}16.${Font_color_suffix} 使用BBR2+CAKE加速
- ${Green_font_prefix}17.${Font_color_suffix} 开启ECN	 		${Green_font_prefix}18.${Font_color_suffix} shutdownECN
- ${Green_font_prefix}19.${Font_color_suffix} 使用BBRplus+FQ版加速 
- ${Green_font_prefix}20.${Font_color_suffix} 使用Lotserver(锐速)加速 
- ${Green_font_prefix}21.${Font_color_suffix} 系统配置优化	 	${Green_font_prefix}22.${Font_color_suffix} 应用johnrosen1的优化方案
- ${Green_font_prefix}23.${Font_color_suffix} 禁用IPv6	 		${Green_font_prefix}24.${Font_color_suffix} 开启IPv6  
+echo && echo -e " TCPAccelerate One-click installation management script ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix} from blog.ylx.me 母鸡慎用
+ ${Green_font_prefix}0.${Font_color_suffix} Upgrade script
+ ${Green_font_prefix}9.${Font_color_suffix} Switch to not uninstall the kernel version	${Green_font_prefix}10.${Font_color_suffix} 切换到一键DD系统脚本
+ ${Green_font_prefix}1.${Font_color_suffix} Install the original BBR kernel		${Green_font_prefix}4.${Font_color_suffix} Install cloudKernel KVM
+ ${Green_font_prefix}2.${Font_color_suffix} Install BBRplusVersion of the kernel		${Green_font_prefix}5.${Font_color_suffix} Install BBRplus新Version of the kernel
+ ${Green_font_prefix}3.${Font_color_suffix} Install Lotserver(Sharp speed)Kernel	${Green_font_prefix}6.${Font_color_suffix} Install xanmodVersion of the kernel
+ ${Green_font_prefix}11.${Font_color_suffix} useBBR+FQ acceleration		${Green_font_prefix}12.${Font_color_suffix} useBBR+FQ_PIEaccelerate 
+ ${Green_font_prefix}13.${Font_color_suffix} useBBR+CAKEaccelerate
+ ${Green_font_prefix}14.${Font_color_suffix} useBBR2+FQ acceleration	 	${Green_font_prefix}15.${Font_color_suffix} useBBR2+FQ_PIEaccelerate 
+ ${Green_font_prefix}16.${Font_color_suffix} useBBR2+CAKEaccelerate
+ ${Green_font_prefix}17.${Font_color_suffix} Turn onECN	 		${Green_font_prefix}18.${Font_color_suffix} shutdownECN
+ ${Green_font_prefix}19.${Font_color_suffix} useBBRplus+FQ版accelerate 
+ ${Green_font_prefix}20.${Font_color_suffix} useLotserver(Sharp speed)accelerate 
+ ${Green_font_prefix}21.${Font_color_suffix} System configuration optimization	 	${Green_font_prefix}22.${Font_color_suffix} 应用johnrosen1的优化方案
+ ${Green_font_prefix}23.${Font_color_suffix} DisableIPv6	 		${Green_font_prefix}24.${Font_color_suffix} Turn onIPv6  
  ${Green_font_prefix}25.${Font_color_suffix} Uninstall all speed up	 	${Green_font_prefix}99.${Font_color_suffix} 退出脚本 
 ————————————————————————————————————————————————————————————————" &&
 
@@ -1151,7 +1151,7 @@ echo && echo -e " TCP加速 一键安装管理脚本 ${Red_font_prefix}[v${sh_ve
 	get_system_info
 	echo -e " System and kernel: ${Font_color_suffix}$opsy ($lbit Bit) $virtual${PLAIN} $kern${PLAIN}${Font_color_suffix}"
 	if [[ ${kernel_status} == "noinstall" ]]; then
-		echo -e " Current state: ${Green_font_prefix}Not Installed${Font_color_suffix} Speed up the kernel ${Red_font_prefix}请先安装内核${Font_color_suffix}"
+		echo -e " Current state: ${Green_font_prefix}Not Installed${Font_color_suffix} Speed up the kernel ${Red_font_prefix}请先InstallKernel${Font_color_suffix}"
 	else
 		echo -e " Current state: ${Green_font_prefix}It has been installed${Font_color_suffix} ${_font_prefix}${kernel_status}${Font_color_suffix} Speed up the kernel , ${Green_font_prefix}${run_status}${Font_color_suffix}"
 		
@@ -1243,37 +1243,37 @@ case "$num" in
 	;;
 esac
 }
-#############内核管理组件#############
+#############Kernel管理组件#############
 
-#删除多余内核
+#删除多余Kernel
 detele_kernel(){
 	if [[ "${release}" == "centos" ]]; then
 		rpm_total=`rpm -qa | grep kernel | grep -v "${kernel_version}" | grep -v "noarch" | wc -l`
 		if [ "${rpm_total}" > "1" ]; then
-			echo -e "检测到 ${rpm_total} 个其余内核，开始卸载..."
+			echo -e "detected ${rpm_total} 个其余Kernel，开始卸载..."
 			for((integer = 1; integer <= ${rpm_total}; integer++)); do
 				rpm_del=`rpm -qa | grep kernel | grep -v "${kernel_version}" | grep -v "noarch" | head -${integer}`
-				echo -e "开始卸载 ${rpm_del} 内核..."
+				echo -e "开始卸载 ${rpm_del} Kernel..."
 				rpm --nodeps -e ${rpm_del}
-				echo -e "卸载 ${rpm_del} 内核卸载完成，继续..."
+				echo -e "卸载 ${rpm_del} Kernel卸载完成，继续..."
 			done
-			echo --nodeps -e "内核卸载完毕，继续..."
+			echo --nodeps -e "Kernel卸载完毕，继续..."
 		else
-			echo -e " 检测到 内核 数量不正确，请检查 !" && exit 1
+			echo -e " detected Kernel 数量不正确，请检查 !" && exit 1
 		fi
 	elif [[ "${release}" == "debian" || "${release}" == "ubuntu" ]]; then
 		deb_total=`dpkg -l | grep linux-image | awk '{print $2}' | grep -v "${kernel_version}" | wc -l`
 		if [ "${deb_total}" > "1" ]; then
-			echo -e "检测到 ${deb_total} 个其余内核，开始卸载..."
+			echo -e "detected ${deb_total} 个其余Kernel，开始卸载..."
 			for((integer = 1; integer <= ${deb_total}; integer++)); do
 				deb_del=`dpkg -l|grep linux-image | awk '{print $2}' | grep -v "${kernel_version}" | head -${integer}`
-				echo -e "开始卸载 ${deb_del} 内核..."
+				echo -e "开始卸载 ${deb_del} Kernel..."
 				apt-get purge -y ${deb_del}
-				echo -e "卸载 ${deb_del} 内核卸载完成，继续..."
+				echo -e "卸载 ${deb_del} Kernel卸载完成，继续..."
 			done
-			echo -e "内核卸载完毕，继续..."
+			echo -e "Kernel卸载完毕，继续..."
 		else
-			echo -e " 检测到 内核 数量不正确，请检查 !" && exit 1
+			echo -e " detected Kernel 数量不正确，请检查 !" && exit 1
 		fi
 	fi
 }
@@ -1282,30 +1282,30 @@ detele_kernel_head(){
 	if [[ "${release}" == "centos" ]]; then
 		rpm_total=`rpm -qa | grep kernel-headers | grep -v "${kernel_version}" | grep -v "noarch" | wc -l`
 		if [ "${rpm_total}" > "1" ]; then
-			echo -e "检测到 ${rpm_total} 个其余head内核，开始卸载..."
+			echo -e "detected ${rpm_total} 个其余headKernel，开始卸载..."
 			for((integer = 1; integer <= ${rpm_total}; integer++)); do
 				rpm_del=`rpm -qa | grep kernel-headers | grep -v "${kernel_version}" | grep -v "noarch" | head -${integer}`
-				echo -e "开始卸载 ${rpm_del} headers内核..."
+				echo -e "开始卸载 ${rpm_del} headersKernel..."
 				rpm --nodeps -e ${rpm_del}
-				echo -e "卸载 ${rpm_del} 内核卸载完成，继续..."
+				echo -e "卸载 ${rpm_del} Kernel卸载完成，继续..."
 			done
-			echo --nodeps -e "内核卸载完毕，继续..."
+			echo --nodeps -e "Kernel卸载完毕，继续..."
 		else
-			echo -e " 检测到 内核 数量不正确，请检查 !" && exit 1
+			echo -e " detected Kernel 数量不正确，请检查 !" && exit 1
 		fi
 	elif [[ "${release}" == "debian" || "${release}" == "ubuntu" ]]; then
 		deb_total=`dpkg -l | grep linux-headers | awk '{print $2}' | grep -v "${kernel_version}" | wc -l`
 		if [ "${deb_total}" > "1" ]; then
-			echo -e "检测到 ${deb_total} 个其余head内核，开始卸载..."
+			echo -e "detected ${deb_total} 个其余headKernel，开始卸载..."
 			for((integer = 1; integer <= ${deb_total}; integer++)); do
 				deb_del=`dpkg -l|grep linux-headers | awk '{print $2}' | grep -v "${kernel_version}" | head -${integer}`
-				echo -e "开始卸载 ${deb_del} headers内核..."
+				echo -e "开始卸载 ${deb_del} headersKernel..."
 				apt-get purge -y ${deb_del}
-				echo -e "卸载 ${deb_del} 内核卸载完成，继续..."
+				echo -e "卸载 ${deb_del} Kernel卸载完成，继续..."
 			done
-			echo -e "内核卸载完毕，继续..."
+			echo -e "Kernel卸载完毕，继续..."
 		else
-			echo -e " 检测到 内核 数量不正确，请检查 !" && exit 1
+			echo -e " detected Kernel 数量不正确，请检查 !" && exit 1
 		fi
 	fi
 }
@@ -1365,7 +1365,7 @@ BBR_grub(){
     fi
 }
 
-#############内核管理组件#############
+#############Kernel管理组件#############
 
 
 
@@ -1498,19 +1498,19 @@ check_version(){
 	fi
 }
 
-#检查安装bbr的系统要求
+#检查Installbbr的系统要求
 check_sys_bbr(){
 	check_version
 	if [[ "${release}" == "centos" ]]; then
 		if [[ ${version} = "7" || ${version} = "8" ]]; then
 			installbbr
 		else
-			echo -e "${Error} BBR内核不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+			echo -e "${Error} BBRKernelDoes not support current system ${release} ${version} ${bit} !" && exit 1
 		fi
 	elif [[ "${release}" == "debian" || "${release}" == "ubuntu" ]]; then
 		installbbr
 	else
-		echo -e "${Error} BBR内核不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+		echo -e "${Error} BBRKernelDoes not support current system ${release} ${version} ${bit} !" && exit 1
 	fi
 }
 
@@ -1520,12 +1520,12 @@ check_sys_bbrplus(){
 		if [[ ${version} = "7" ]]; then
 			installbbrplus
 		else
-			echo -e "${Error} BBRplus内核不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+			echo -e "${Error} BBRplusKernelDoes not support current system ${release} ${version} ${bit} !" && exit 1
 		fi
 	elif [[ "${release}" == "debian" || "${release}" == "ubuntu" ]]; then
 		installbbrplus
 	else
-		echo -e "${Error} BBRplus内核不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+		echo -e "${Error} BBRplusKernelDoes not support current system ${release} ${version} ${bit} !" && exit 1
 	fi
 }
 
@@ -1535,12 +1535,12 @@ check_sys_bbrplusnew(){
 		if [[ ${version} = "7" ]]; then
 			installbbrplusnew
 		else
-			echo -e "${Error} BBRplusNew内核不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+			echo -e "${Error} BBRplusNewKernelDoes not support current system ${release} ${version} ${bit} !" && exit 1
 		fi
 	elif [[ "${release}" == "debian" || "${release}" == "ubuntu" ]]; then
 		installbbrplusnew
 	else
-		echo -e "${Error} BBRplusNew内核不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+		echo -e "${Error} BBRplusNewKernelDoes not support current system ${release} ${version} ${bit} !" && exit 1
 	fi
 }
 
@@ -1550,16 +1550,16 @@ check_sys_xanmod(){
 		if [[ ${version} = "7" || ${version} = "8" ]]; then
 			installxanmod
 		else
-			echo -e "${Error} xanmod内核不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+			echo -e "${Error} xanmodKernelDoes not support current system ${release} ${version} ${bit} !" && exit 1
 		fi
 	elif [[ "${release}" == "debian" || "${release}" == "ubuntu" ]]; then
 		installxanmod
 	else
-		echo -e "${Error} xanmod内核不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+		echo -e "${Error} xanmodKernelDoes not support current system ${release} ${version} ${bit} !" && exit 1
 	fi
 }
 
-#检查安装Lotsever的系统要求
+#检查InstallLotsever的系统要求
 check_sys_Lotsever(){
 	check_version
 	if [[ "${release}" == "centos" ]]; then
@@ -1571,7 +1571,7 @@ check_sys_Lotsever(){
 			kernel_version="4.11.2-1"
 			installlot
 		else
-			echo -e "${Error} Lotsever不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+			echo -e "${Error} LotseverDoes not support current system ${release} ${version} ${bit} !" && exit 1
 		fi
 	elif [[ "${release}" == "debian" ]]; then
 		if [[ ${version} = "7" || ${version} = "8" ]]; then
@@ -1588,7 +1588,7 @@ check_sys_Lotsever(){
 				installlot
 			fi
 		else
-			echo -e "${Error} Lotsever不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+			echo -e "${Error} LotseverDoes not support current system ${release} ${version} ${bit} !" && exit 1
 		fi
 	elif [[ "${release}" == "ubuntu" ]]; then
 		if [[ ${version} -ge "12" ]]; then
@@ -1600,26 +1600,26 @@ check_sys_Lotsever(){
 				installlot
 			fi
 		else
-			echo -e "${Error} Lotsever不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+			echo -e "${Error} LotseverDoes not support current system ${release} ${version} ${bit} !" && exit 1
 		fi
 	else
-		echo -e "${Error} Lotsever不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+		echo -e "${Error} LotseverDoes not support current system ${release} ${version} ${bit} !" && exit 1
 	fi
 }
 
-#检查cloud内核并安装
+#检查cloudKernel并Install
 check_sys_cloud(){
 	check_version
 	if [[ "${release}" == "centos" ]]; then
 		if [[ ${version} = "7" ]]; then
 			installcloud
 		else
-			echo -e "${Error} 不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+			echo -e "${Error} Does not support current system ${release} ${version} ${bit} !" && exit 1
 		fi
 	elif [[ "${release}" == "debian" || "${release}" == "ubuntu" ]]; then
 		installcloud
 	else
-		echo -e "${Error} 不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+		echo -e "${Error} Does not support current system ${release} ${version} ${bit} !" && exit 1
 	fi
 }
 
@@ -1649,65 +1649,65 @@ check_status(){
 		if [[ ${run_status} == "bbr" ]]; then
 			run_status=`cat /proc/sys/net/ipv4/tcp_congestion_control | awk '{print $1}'`
 			if [[ ${run_status} == "bbr" ]]; then
-				run_status="BBR启动成功"
+				run_status="BBRSuccessfully started"
 			else 
-				run_status="BBR启动失败"
+				run_status="BBRfailed to activate"
 			fi
 		elif [[ ${run_status} == "bbr2" ]]; then
 			run_status=`cat /proc/sys/net/ipv4/tcp_congestion_control | awk '{print $1}'`
 			if [[ ${run_status} == "bbr2" ]]; then
-				run_status="BBR2启动成功"
+				run_status="BBR2Successfully started"
 			else 
-				run_status="BBR2启动失败"
+				run_status="BBR2failed to activate"
 			fi	
 		elif [[ ${run_status} == "tsunami" ]]; then
 			run_status=`lsmod | grep "tsunami" | awk '{print $1}'`
 			if [[ ${run_status} == "tcp_tsunami" ]]; then
-				run_status="BBR魔改版启动成功"
+				run_status="BBRMagic RevisionSuccessfully started"
 			else 
-				run_status="BBR魔改版启动失败"
+				run_status="BBRMagic Revisionfailed to activate"
 			fi
 		elif [[ ${run_status} == "nanqinlang" ]]; then
 			run_status=`lsmod | grep "nanqinlang" | awk '{print $1}'`
 			if [[ ${run_status} == "tcp_nanqinlang" ]]; then
-				run_status="暴力BBR魔改版启动成功"
+				run_status="暴力BBRMagic RevisionSuccessfully started"
 			else 
-				run_status="暴力BBR魔改版启动失败"
+				run_status="暴力BBRMagic Revisionfailed to activate"
 			fi
 		else 
-			run_status="Not Installed加速模块"
+			run_status="Not InstalledaccelerateModule"
 		fi
 		
 	elif [[ ${kernel_status} == "Lotserver" ]]; then
 		if [[ -e /appex/bin/lotServer.sh ]]; then
 			run_status=`bash /appex/bin/lotServer.sh status | grep "LotServer" | awk  '{print $3}'`
 			if [[ ${run_status} = "running!" ]]; then
-				run_status="启动成功"
+				run_status="Successfully started"
 			else 
-				run_status="启动失败"
+				run_status="failed to activate"
 			fi
 		else 
-			run_status="Not Installed加速模块"
+			run_status="Not InstalledaccelerateModule"
 		fi	
 	elif [[ ${kernel_status} == "BBRplus" ]]; then
 		run_status=`cat /proc/sys/net/ipv4/tcp_congestion_control | awk '{print $1}'`
 		if [[ ${run_status} == "bbrplus" ]]; then
 			run_status=`cat /proc/sys/net/ipv4/tcp_congestion_control | awk '{print $1}'`
 			if [[ ${run_status} == "bbrplus" ]]; then
-				run_status="BBRplus启动成功"
+				run_status="BBRplusSuccessfully started"
 			else 
-				run_status="BBRplus启动失败"
+				run_status="BBRplusfailed to activate"
 			fi
 		elif [[ ${run_status} == "bbr" ]]; then
-				run_status="BBR启动成功"	
+				run_status="BBRSuccessfully started"	
 		else 
-			run_status="Not Installed加速模块"
+			run_status="Not InstalledaccelerateModule"
 		fi
 	fi
 }
 
-#############系统检测组件#############
+#############System detection components#############
 check_sys
 check_version
-[[ ${release} != "debian" ]] && [[ ${release} != "ubuntu" ]] && [[ ${release} != "centos" ]] && echo -e "${Error} 本脚本不支持当前系统 ${release} !" && exit 1
+[[ ${release} != "debian" ]] && [[ ${release} != "ubuntu" ]] && [[ ${release} != "centos" ]] && echo -e "${Error} This script Does not support current system ${release} !" && exit 1
 start_menu
