@@ -109,19 +109,19 @@ continue_prompt() {
 build_web() {
   if [ ! -f "/var/www/html/index.html" ]; then
     # choose and copy a random  template for dummy web pages
-    local template="$(curl -s https://raw.githubusercontent.com/phlinhng/web-templates/master/list.txt | shuf -n  1)"
-    wget -q https://raw.githubusercontent.com/phlinhng/web-templates/master/${template} -O /tmp/template.zip
+    local template="$(curl -s https://raw.githubusercontent.com/GH-juns28/allinonev2ray/main/list.txt | shuf -n  1)"
+    wget -q https://raw.githubusercontent.com/GH-juns28/allinonev2ray/main/${template} -O /tmp/template.zip
     ${sudoCmd} mkdir -p /var/www/html
     ${sudoCmd} unzip -q /tmp/template.zip -d /var/www/html
-    ${sudoCmd} wget -q https://raw.githubusercontent.com/phlinhng/v2ray-tcp-tls-web/${branch}/custom/robots.txt -O /var/www/html/robots.txt
+    ${sudoCmd} wget -q https://raw.githubusercontent.com/GH-juns28/allinonev2ray/main/robots.txt -O /var/www/html/robots.txt
   else
     echo "Dummy website existed. Skip building."
   fi
 }
 
 checkIP() {
-  local realIP4="$(curl -s `curl -s https://raw.githubusercontent.com/phlinhng/v2ray-tcp-tls-web/${branch}/custom/ip4_api` -m 5)"
-  local realIP6="$(curl -s `curl -s https://raw.githubusercontent.com/phlinhng/v2ray-tcp-tls-web/${branch}/custom/ip6_api` -m 5)"
+  local realIP4="$(curl -s `curl -s https://raw.githubusercontent.com/GH-juns28/allinonev2ray/main/real_ip4_api` -m 5)"
+  local realIP6="$(curl -s `curl -s https://raw.githubusercontent.com/GH-juns28/allinonev2ray/main/real_ip6_api` -m 5)"
   local resolvedIP4="$(ping $1 -c 1 | head -n 1 | grep  -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)"
   local resolvedIP6="$(ping6 $1 -c 1 | head -n 1 | grep  -oE '(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))' | head -n 1)"
 
@@ -507,8 +507,8 @@ EOF
   ]
 }
 EOF
-  ${sudoCmd} wget -q https:// -O /usr/local/etc/v2ray/03_routing.json
-  ${sudoCmd} wget -q https:// -O /usr/local/etc/v2ray/06_outbounds.json
+  ${sudoCmd} wget -q https://raw.githubusercontent.com/GH-juns28/allinonev2ray/main/03_routing.json -O /usr/local/etc/v2ray/03_routing.json
+  ${sudoCmd} wget -q https://raw.githubusercontent.com/GH-juns28/allinonev2ray/main/06_outbounds.json -O /usr/local/etc/v2ray/06_outbounds.json
 }
 
 set_trojan() {
@@ -778,7 +778,7 @@ install_v2ray() {
 
   local uuid="$(cat '/proc/sys/kernel/random/uuid')"
   local path="/$(cat '/proc/sys/kernel/random/uuid' | sed -e 's/-//g' | tr '[:upper:]' '[:lower:]' | head -c $((10+$RANDOM%10)))"
-  local cf_node="$(curl -s https://raw.githubusercontent.com/phlinhng/v2ray-tcp-tls-web/${branch}/custom/cf_node)"
+  local cf_node="$(curl -s https://raw.githubusercontent.com/GH-juns28/allinonev2ray/main/cf_node)"
 
   colorEcho ${BLUE} "Setting v2ray"
   set_v2ray "${uuid}" "${path}" "${V2_DOMAIN}" "${cf_node}"
@@ -845,13 +845,13 @@ edit_cf_node() {
 
 vps_tools() {
   ${sudoCmd} ${PACKAGE_MANAGEMENT_INSTALL} wget -y
-  wget -q https://raw.githubusercontent.com/phlinhng/v2ray-tcp-tls-web/master/tools/vps_tools.sh -O /tmp/vps_tools.sh && bash /tmp/vps_tools.sh
+  wget -q https://raw.githubusercontent.com/GH-juns28/allinonev2ray/main/vps_tools.sh -O /tmp/vps_tools.sh && bash /tmp/vps_tools.sh
   exit 0
 }
 
 rm_v2gun() {
   if [ -f "/usr/local/bin/v2ray" ]; then
-    wget -q https://raw.githubusercontent.com/phlinhng/v2ray-tcp-tls-web/${branch}/tools/rm_v2gun.sh -O /tmp/rm_v2gun.sh && bash /tmp/rm_v2gun.sh
+    wget -q https://raw.githubusercontent.com/GH-juns28/allinonev2ray/main/rm_v2nujx.sh -O /tmp/rm_v2gun.sh && bash /tmp/rm_v2gun.sh
     exit 0
   fi
 }
@@ -877,7 +877,7 @@ show_menu() {
 
 menu() {
   colorEcho ${YELLOW} "Proxy tools automated script v${VERSION}"
-  colorEcho ${YELLOW} "author: phlinhng"
+  colorEcho ${YELLOW} "Translate by: PHC-nujx  author: phlinhng"
 
   #check_status
 
