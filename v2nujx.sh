@@ -851,7 +851,7 @@ vps_tools() {
 
 rm_v2gun() {
   if [ -f "/usr/local/bin/v2ray" ]; then
-    wget -q https://raw.githubusercontent.com/GH-juns28/allinonev2ray/main/rm_v2nujx.sh -O /tmp/rm_v2gun.sh && bash /tmp/rm_v2gun.sh
+    wget -q https://raw.githubusercontent.com/GH-juns28/allinonev2ray/main/rm_v2nujx.sh -O /tmp/rm_v2nujx.sh && bash /tmp/rm_v2nujx.sh
     exit 0
   fi
 }
