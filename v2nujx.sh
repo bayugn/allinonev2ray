@@ -814,7 +814,7 @@ install_v2ray() {
 
   get_cert "${V2_DOMAIN}"
 
-  colorEcho ${GREEN} "安装 VLESS + VMess + Trojan + NaiveProxy 成功!"
+  colorEcho ${GREEN} "installation VLESS + VMess + Trojan + NaiveProxy success!"
   show_links
 }
 
