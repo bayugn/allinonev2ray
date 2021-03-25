@@ -91,7 +91,7 @@ installbbr(){
 	stty erase '^H' && read -p "You need to restart the VPS before BBR can be turned on. Do you want to restart it now? ? [Y/n] :" yn
 	[ -z "${yn}" ] && yn="y"
 	if [[ $yn == [Yy] ]]; then
-		echo -e "${Info} VPS 重启中..."
+		echo -e "${Info} VPS johnrosen1..."
 		reboot
 	fi
 	#echo -e "${Tip} After the kernel is installed, please refer to the above information to check whether the installation is successful and manually adjust the kernel boot sequence"
@@ -134,10 +134,10 @@ installbbrplus(){
 	echo -e "${Tip} ${Red_font_prefix}Please check if there is kernel information above，Never restart without a kernel${Font_color_suffix}"
 	echo -e "${Tip} ${Red_font_prefix}rescueNot a normal kernel, to exclude this${Font_color_suffix}"
 	echo -e "${Tip} After restarting the VPS, please re-run the script to start${Red_font_prefix}BBRplus${Font_color_suffix}"
-	stty erase '^H' && read -p "需要重启VPS后，才能Turn onBBRplus，是否现在重启 ? [Y/n] :" yn
+	stty erase '^H' && read -p "After you need to restart the VPS，TalentTurn onBBRplus，Whether to restart now ? [Y/n] :" yn
 	[ -z "${yn}" ] && yn="y"
 	if [[ $yn == [Yy] ]]; then
-		echo -e "${Info} VPS 重启中..."
+		echo -e "${Info} VPS johnrosen1..."
 		reboot
 	fi
 	#echo -e "${Tip} After the kernel is installed, please refer to the above information to check whether the installation is successful and manually adjust the kernel boot sequence"
@@ -256,10 +256,10 @@ installlot(){
 	echo -e "${Tip} ${Red_font_prefix}Please check if there is kernel information above，Never restart without a kernel${Font_color_suffix}"
 	echo -e "${Tip} ${Red_font_prefix}rescueNot a normal kernel, to exclude this${Font_color_suffix}"
 	echo -e "${Tip} After restarting the VPS, please re-run the script to start${Red_font_prefix}Lotserver${Font_color_suffix}"
-	stty erase '^H' && read -p "需要重启VPS后，才能Turn onLotserver，是否现在重启 ? [Y/n] :" yn
+	stty erase '^H' && read -p "After you need to restart the VPS，TalentTurn onLotserver，Whether to restart now ? [Y/n] :" yn
 	[ -z "${yn}" ] && yn="y"
 	if [[ $yn == [Yy] ]]; then
-		echo -e "${Info} VPS 重启中..."
+		echo -e "${Info} VPS johnrosen1..."
 		reboot
 	fi
 	#echo -e "${Tip} After the kernel is installed, please refer to the above information to check whether the installation is successful and manually adjust the kernel boot sequence"
@@ -318,7 +318,7 @@ installxanmod(){
 	stty erase '^H' && read -p "You need to restart the VPS before BBR can be turned on. Do you want to restart it now? ? [Y/n] :" yn
 	[ -z "${yn}" ] && yn="y"
 	if [[ $yn == [Yy] ]]; then
-		echo -e "${Info} VPS 重启中..."
+		echo -e "${Info} VPS johnrosen1..."
 		reboot
 	fi
 	#echo -e "${Tip} After the kernel is installed, please refer to the above information to check whether the installation is successful and manually adjust the kernel boot sequence"
@@ -365,10 +365,10 @@ installbbrplusnew(){
 	echo -e "${Tip} ${Red_font_prefix}Please check if there is kernel information above，Never restart without a kernel${Font_color_suffix}"
 	echo -e "${Tip} ${Red_font_prefix}rescueNot a normal kernel, to exclude this${Font_color_suffix}"
 	echo -e "${Tip} After restarting the VPS, please re-run the script to start${Red_font_prefix}BBRplus${Font_color_suffix}"
-	stty erase '^H' && read -p "需要重启VPS后，才能Turn onBBRplus，是否现在重启 ? [Y/n] :" yn
+	stty erase '^H' && read -p "After you need to restart the VPS，TalentTurn onBBRplus，Whether to restart now ? [Y/n] :" yn
 	[ -z "${yn}" ] && yn="y"
 	if [[ $yn == [Yy] ]]; then
-		echo -e "${Info} VPS 重启中..."
+		echo -e "${Info} VPS johnrosen1..."
 		reboot
 	fi
 	#echo -e "${Tip} After the kernel is installed, please refer to the above information to check whether the installation is successful and manually adjust the kernel boot sequence"
@@ -417,7 +417,7 @@ installcloud(){
 	stty erase '^H' && read -p "You need to restart the VPS before BBR can be turned on. Do you want to restart it now? ? [Y/n] :" yn
 	[ -z "${yn}" ] && yn="y"
 	if [[ $yn == [Yy] ]]; then
-		echo -e "${Info} VPS 重启中..."
+		echo -e "${Info} VPS johnrosen1..."
 		reboot
 	fi
 	# echo -e "${Tip} After the kernel is installed, please refer to the above information to check whether the installation is successful and manually adjust the kernel boot sequence"
@@ -429,7 +429,7 @@ startbbrfq(){
 	echo "net.core.default_qdisc=fq" >> /etc/sysctl.d/99-sysctl.conf
 	echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.d/99-sysctl.conf
 	sysctl --system
-	echo -e "${Info}BBR+FQ修改成功，重启生效！"
+	echo -e "${Info}BBR+FQSuccessfully modified，Restart to take effect!"
 }
 
 #EnableBBR+fq_pie
@@ -438,7 +438,7 @@ startbbrfqpie(){
 	echo "net.core.default_qdisc=fq_pie" >> /etc/sysctl.d/99-sysctl.conf
 	echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.d/99-sysctl.conf
 	sysctl --system
-	echo -e "${Info}BBR+FQ_PIE修改成功，重启生效！"
+	echo -e "${Info}BBR+FQ_PIESuccessfully modified，Restart to take effect!"
 }
 
 #EnableBBR+cake
@@ -447,7 +447,7 @@ startbbrcake(){
 	echo "net.core.default_qdisc=cake" >> /etc/sysctl.d/99-sysctl.conf
 	echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.d/99-sysctl.conf
 	sysctl --system
-	echo -e "${Info}BBR+cake修改成功，重启生效！"
+	echo -e "${Info}BBR+cakeSuccessfully modified，Restart to take effect!"
 }
 
 #EnableBBRplus
@@ -456,7 +456,7 @@ startbbrplus(){
 	echo "net.core.default_qdisc=fq" >> /etc/sysctl.d/99-sysctl.conf
 	echo "net.ipv4.tcp_congestion_control=bbrplus" >> /etc/sysctl.d/99-sysctl.conf
 	sysctl --system
-	echo -e "${Info}BBRplus修改成功，重启生效！"
+	echo -e "${Info}BBRplusSuccessfully modified，Restart to take effect!"
 }
 
 #EnableLotserver
@@ -484,7 +484,7 @@ startbbr2fq(){
 	echo "net.core.default_qdisc=fq" >> /etc/sysctl.d/99-sysctl.conf
 	echo "net.ipv4.tcp_congestion_control=bbr2" >> /etc/sysctl.d/99-sysctl.conf
 	sysctl --system
-	echo -e "${Info}BBR2修改成功，重启生效！"
+	echo -e "${Info}BBR2Successfully modified，Restart to take effect!"
 }
 
 #EnableBBR2+FQ_PIE
@@ -493,7 +493,7 @@ startbbr2fqpie(){
 	echo "net.core.default_qdisc=fq_pie" >> /etc/sysctl.d/99-sysctl.conf
 	echo "net.ipv4.tcp_congestion_control=bbr2" >> /etc/sysctl.d/99-sysctl.conf
 	sysctl --system
-	echo -e "${Info}BBR2修改成功，重启生效！"
+	echo -e "${Info}BBR2Successfully modified，Restart to take effect!"
 }
 
 #EnableBBR2+CAKE
@@ -502,7 +502,7 @@ startbbr2cake(){
 	echo "net.core.default_qdisc=cake" >> /etc/sysctl.d/99-sysctl.conf
 	echo "net.ipv4.tcp_congestion_control=bbr2" >> /etc/sysctl.d/99-sysctl.conf
 	sysctl --system
-	echo -e "${Info}BBR2修改成功，重启生效！"
+	echo -e "${Info}BBR2Successfully modified，Restart to take effect!"
 }
 
 #Turn onecn
@@ -541,7 +541,7 @@ remove_bbr_lotserver(){
 		echo | bash <(wget -qO- https://git.io/lotServerInstall.sh) uninstall
 	fi
 	clear
-	# echo -e "${Info}:清除bbr/lotserveraccelerate完成。"
+	# echo -e "${Info}:清除bbr/lotserveracceleratecarry out。"
 	# sleep 1s
 }
 
@@ -1050,26 +1050,26 @@ sed -i '/required pam_limits.so/d' /etc/pam.d/common-session
 echo "session required pam_limits.so" >> /etc/pam.d/common-session
 fi
 systemctl daemon-reload
-echo -e "${Info}johnrosen1优化方案应用结束，可能需要重启！"
+echo -e "${Info}johnrosen1Optimized applicationEnd, may need to restart！"
 }
 
 #更新脚本
 Update_Shell(){
-	echo -e "当前版本为 [ ${sh_ver} ]，开始检测最新版本..."
+	echo -e "The current version is [ ${sh_ver} ]，Start testing the latest version..."
 	sh_new_ver=$(wget -qO- "https://${github}/tcp.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1)
-	[[ -z ${sh_new_ver} ]] && echo -e "${Error} 检测最新版本失败 !" && start_menu
+	[[ -z ${sh_new_ver} ]] && echo -e "${Error} Failed to detect the latest version !" && start_menu
 	if [[ ${sh_new_ver} != ${sh_ver} ]]; then
-		echo -e "发现新版本[ ${sh_new_ver} ]，是否更新？[Y/n]"
-		read -p "(默认: y):" yn
+		echo -e "New version found[ ${sh_new_ver} ]，Whether to update？[Y/n]"
+		read -p "(default: y):" yn
 		[[ -z "${yn}" ]] && yn="y"
 		if [[ ${yn} == [Yy] ]]; then
 			wget -N "https://${github}/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
-			echo -e "脚本已更新为最新版本[ ${sh_new_ver} ] !"
+			echo -e "The script has been updated to the latest version [ ${sh_new_ver} ] !"
 		else
-			echo && echo "	已取消..." && echo
+			echo && echo "	Cancelled..." && echo
 		fi
 	else
-		echo -e "当前已是最新版本[ ${sh_new_ver} ] !"
+		echo -e "Currently the latest version[ ${sh_new_ver} ] !"
 		sleep 2s && ./tcp.sh
 	fi
 }
@@ -1123,28 +1123,39 @@ openipv6(){
 net.ipv6.conf.default.disable_ipv6 = 0
 net.ipv6.conf.lo.disable_ipv6 = 0" >> /etc/sysctl.d/99-sysctl.conf
 	sysctl --system
-	echo -e "${Info}Turn onIPv6结束，可能需要重启！"
+	echo -e "${Info}Turn onIPv6End, may need to restart！"
 }
 
 #开始菜单
 start_menu(){
 clear
-echo && echo -e " TCPAccelerate One-click installation management script ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix} from blog.ylx.me 母鸡慎用
+echo && echo -e " TCPAccelerate One-click installation management script 
+ ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix} from blog.ylx.me Use with caution for hens
  ${Green_font_prefix}0.${Font_color_suffix} Upgrade script
- ${Green_font_prefix}9.${Font_color_suffix} Switch to not uninstall the kernel version	${Green_font_prefix}10.${Font_color_suffix} 切换到一键DD系统脚本
- ${Green_font_prefix}1.${Font_color_suffix} Install the original BBR kernel		${Green_font_prefix}4.${Font_color_suffix} Install cloudKernel KVM
- ${Green_font_prefix}2.${Font_color_suffix} Install BBRplusVersion of the kernel		${Green_font_prefix}5.${Font_color_suffix} Install BBRplus新Version of the kernel
- ${Green_font_prefix}3.${Font_color_suffix} Install Lotserver(Sharp speed)Kernel	${Green_font_prefix}6.${Font_color_suffix} Install xanmodVersion of the kernel
- ${Green_font_prefix}11.${Font_color_suffix} useBBR+FQ acceleration		${Green_font_prefix}12.${Font_color_suffix} useBBR+FQ_PIEaccelerate 
+ ${Green_font_prefix}1.${Font_color_suffix} Install the original BBR kernel
+ ${Green_font_prefix}2.${Font_color_suffix} Install BBRplusVersion of the kernel		
+ ${Green_font_prefix}4.${Font_color_suffix} Install cloudKernel KVM
+ ${Green_font_prefix}3.${Font_color_suffix} Install Lotserver(Sharp speed)Kernel 		
+ ${Green_font_prefix}5.${Font_color_suffix} Install BBRplus新Version of the kernel	
+ ${Green_font_prefix}6.${Font_color_suffix} Install xanmodVersion of the kernel
+ ${Green_font_prefix}9.${Font_color_suffix} Switch to not uninstall the kernel version
+ ${Green_font_prefix}10.${Font_color_suffix} Switch to one-click DD system script
+ ${Green_font_prefix}11.${Font_color_suffix} useBBR+FQ acceleration		
+ ${Green_font_prefix}12.${Font_color_suffix} useBBR+FQ_PIEaccelerate 
  ${Green_font_prefix}13.${Font_color_suffix} useBBR+CAKEaccelerate
- ${Green_font_prefix}14.${Font_color_suffix} useBBR2+FQ acceleration	 	${Green_font_prefix}15.${Font_color_suffix} useBBR2+FQ_PIEaccelerate 
+ ${Green_font_prefix}14.${Font_color_suffix} useBBR2+FQ acceleration	 	
+ ${Green_font_prefix}15.${Font_color_suffix} useBBR2+FQ_PIEaccelerate 
  ${Green_font_prefix}16.${Font_color_suffix} useBBR2+CAKEaccelerate
- ${Green_font_prefix}17.${Font_color_suffix} Turn onECN	 		${Green_font_prefix}18.${Font_color_suffix} shutdownECN
- ${Green_font_prefix}19.${Font_color_suffix} useBBRplus+FQ版accelerate 
+ ${Green_font_prefix}17.${Font_color_suffix} Turn onECN	 		
+ ${Green_font_prefix}18.${Font_color_suffix} shutdownECN
+ ${Green_font_prefix}19.${Font_color_suffix} use BBR plus + FQ Versiona ccelerate 
  ${Green_font_prefix}20.${Font_color_suffix} useLotserver(Sharp speed)accelerate 
- ${Green_font_prefix}21.${Font_color_suffix} System configuration optimization	 	${Green_font_prefix}22.${Font_color_suffix} 应用johnrosen1的优化方案
- ${Green_font_prefix}23.${Font_color_suffix} DisableIPv6	 		${Green_font_prefix}24.${Font_color_suffix} Turn onIPv6  
- ${Green_font_prefix}25.${Font_color_suffix} Uninstall all speed up	 	${Green_font_prefix}99.${Font_color_suffix} 退出脚本 
+ ${Green_font_prefix}21.${Font_color_suffix} System configuration optimization	 	
+ ${Green_font_prefix}22.${Font_color_suffix} Apply johnrosen1's optimized solution
+ ${Green_font_prefix}23.${Font_color_suffix} DisableIPv6	 		
+ ${Green_font_prefix}24.${Font_color_suffix} Turn onIPv6  
+ ${Green_font_prefix}25.${Font_color_suffix} Uninstall all speed up	 	
+ ${Green_font_prefix}99.${Font_color_suffix} Exit script 
 ————————————————————————————————————————————————————————————————" &&
 
 	check_status
@@ -1158,7 +1169,7 @@ echo && echo -e " TCPAccelerate One-click installation management script ${Red_f
 	fi
 	echo -e " The current congestion control algorithm is: ${Green_font_prefix}${net_congestion_control}${Font_color_suffix} 当前队列算法为: ${Green_font_prefix}${net_qdisc}${Font_color_suffix} "
 	
-read -p " 请输入数字 :" num
+read -p " Please enter the number :" num
 case "$num" in
 	0)
 	Update_Shell
@@ -1250,30 +1261,30 @@ detele_kernel(){
 	if [[ "${release}" == "centos" ]]; then
 		rpm_total=`rpm -qa | grep kernel | grep -v "${kernel_version}" | grep -v "noarch" | wc -l`
 		if [ "${rpm_total}" > "1" ]; then
-			echo -e "detected ${rpm_total} 个其余Kernel，开始卸载..."
+			echo -e "detected ${rpm_total} 个其余Kernel，Start uninstall..."
 			for((integer = 1; integer <= ${rpm_total}; integer++)); do
 				rpm_del=`rpm -qa | grep kernel | grep -v "${kernel_version}" | grep -v "noarch" | head -${integer}`
-				echo -e "开始卸载 ${rpm_del} Kernel..."
+				echo -e "Start uninstall ${rpm_del} Kernel..."
 				rpm --nodeps -e ${rpm_del}
-				echo -e "卸载 ${rpm_del} Kernel卸载完成，继续..."
+				echo -e "Uninstall ${rpm_del} KernelUninstallcarry out，carry on..."
 			done
-			echo --nodeps -e "Kernel卸载完毕，继续..."
+			echo --nodeps -e "KernelUninstall complete，carry on..."
 		else
-			echo -e " detected Kernel 数量不正确，请检查 !" && exit 1
+			echo -e " detected Kernel Incorrect quantity，Please check !" && exit 1
 		fi
 	elif [[ "${release}" == "debian" || "${release}" == "ubuntu" ]]; then
 		deb_total=`dpkg -l | grep linux-image | awk '{print $2}' | grep -v "${kernel_version}" | wc -l`
 		if [ "${deb_total}" > "1" ]; then
-			echo -e "detected ${deb_total} 个其余Kernel，开始卸载..."
+			echo -e "detected ${deb_total} 个其余Kernel，Start uninstall..."
 			for((integer = 1; integer <= ${deb_total}; integer++)); do
 				deb_del=`dpkg -l|grep linux-image | awk '{print $2}' | grep -v "${kernel_version}" | head -${integer}`
-				echo -e "开始卸载 ${deb_del} Kernel..."
+				echo -e "Start uninstall ${deb_del} Kernel..."
 				apt-get purge -y ${deb_del}
-				echo -e "卸载 ${deb_del} Kernel卸载完成，继续..."
+				echo -e "Uninstall ${deb_del} KernelUninstallcarry out，carry on..."
 			done
-			echo -e "Kernel卸载完毕，继续..."
+			echo -e "KernelUninstall complete，carry on..."
 		else
-			echo -e " detected Kernel 数量不正确，请检查 !" && exit 1
+			echo -e " detected Kernel Incorrect quantity，Please check !" && exit 1
 		fi
 	fi
 }
@@ -1282,30 +1293,30 @@ detele_kernel_head(){
 	if [[ "${release}" == "centos" ]]; then
 		rpm_total=`rpm -qa | grep kernel-headers | grep -v "${kernel_version}" | grep -v "noarch" | wc -l`
 		if [ "${rpm_total}" > "1" ]; then
-			echo -e "detected ${rpm_total} 个其余headKernel，开始卸载..."
+			echo -e "detected ${rpm_total} 个其余headKernel，Start uninstall..."
 			for((integer = 1; integer <= ${rpm_total}; integer++)); do
 				rpm_del=`rpm -qa | grep kernel-headers | grep -v "${kernel_version}" | grep -v "noarch" | head -${integer}`
-				echo -e "开始卸载 ${rpm_del} headersKernel..."
+				echo -e "Start uninstall ${rpm_del} headersKernel..."
 				rpm --nodeps -e ${rpm_del}
-				echo -e "卸载 ${rpm_del} Kernel卸载完成，继续..."
+				echo -e "Uninstall ${rpm_del} KernelUninstallcarry out，carry on..."
 			done
-			echo --nodeps -e "Kernel卸载完毕，继续..."
+			echo --nodeps -e "KernelUninstall complete，carry on..."
 		else
-			echo -e " detected Kernel 数量不正确，请检查 !" && exit 1
+			echo -e " detected Kernel Incorrect quantity，Please check !" && exit 1
 		fi
 	elif [[ "${release}" == "debian" || "${release}" == "ubuntu" ]]; then
 		deb_total=`dpkg -l | grep linux-headers | awk '{print $2}' | grep -v "${kernel_version}" | wc -l`
 		if [ "${deb_total}" > "1" ]; then
-			echo -e "detected ${deb_total} 个其余headKernel，开始卸载..."
+			echo -e "detected ${deb_total} 个其余headKernel，Start uninstall..."
 			for((integer = 1; integer <= ${deb_total}; integer++)); do
 				deb_del=`dpkg -l|grep linux-headers | awk '{print $2}' | grep -v "${kernel_version}" | head -${integer}`
-				echo -e "开始卸载 ${deb_del} headersKernel..."
+				echo -e "Start uninstall ${deb_del} headersKernel..."
 				apt-get purge -y ${deb_del}
-				echo -e "卸载 ${deb_del} Kernel卸载完成，继续..."
+				echo -e "Uninstall ${deb_del} KernelUninstallcarry out，carry on..."
 			done
-			echo -e "Kernel卸载完毕，继续..."
+			echo -e "KernelUninstall complete，carry on..."
 		else
-			echo -e " detected Kernel 数量不正确，请检查 !" && exit 1
+			echo -e " detected Kernel Incorrect quantity，Please check !" && exit 1
 		fi
 	fi
 }
@@ -1326,7 +1337,7 @@ BBR_grub(){
 				grub-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
 				grub-set-default 0	
 			else
-				echo -e "${Error} grub.conf/grub.cfg 找不到，请检查."
+				echo -e "${Error} grub.conf/grub.cfg 找不到，Please check."
 				exit
             fi
         elif [[ ${version} = "7" ]]; then
@@ -1340,7 +1351,7 @@ BBR_grub(){
 				grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
 				grub2-set-default 0	
 			else
-				echo -e "${Error} grub.cfg 找不到，请检查."
+				echo -e "${Error} grub.cfg 找不到，Please check."
 				exit
             fi	
 		elif [[ ${version} = "8" ]]; then
@@ -1354,7 +1365,7 @@ BBR_grub(){
 				grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
 				grub2-set-default 0	
 			else
-				echo -e "${Error} grub.cfg 找不到，请检查."
+				echo -e "${Error} grub.cfg 找不到，Please check."
 				exit
 			fi
 			grubby --info=ALL|awk -F= '$1=="kernel" {print i++ " : " $2}'
@@ -1670,9 +1681,9 @@ check_status(){
 		elif [[ ${run_status} == "nanqinlang" ]]; then
 			run_status=`lsmod | grep "nanqinlang" | awk '{print $1}'`
 			if [[ ${run_status} == "tcp_nanqinlang" ]]; then
-				run_status="暴力BBRMagic RevisionSuccessfully started"
+				run_status="violenceBBRMagic RevisionSuccessfully started"
 			else 
-				run_status="暴力BBRMagic Revisionfailed to activate"
+				run_status="violenceBBRMagic Revisionfailed to activate"
 			fi
 		else 
 			run_status="Not InstalledaccelerateModule"
@@ -1706,7 +1717,7 @@ check_status(){
 	fi
 }
 
-#############System detection components#############
+#############系统检测组件#############
 check_sys
 check_version
 [[ ${release} != "debian" ]] && [[ ${release} != "ubuntu" ]] && [[ ${release} != "centos" ]] && echo -e "${Error} This script Does not support current system ${release} !" && exit 1
